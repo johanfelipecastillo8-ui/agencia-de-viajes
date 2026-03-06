@@ -1,31 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="./CSS/index.css">
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
-    <title>Reserva tu viaje</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="../css/reservas.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Reservar Viaje</title>
+<link rel="stylesheet" href="estilos.css">
 </head>
+
 <body>
-    <header>
-        <h1>Reserva tu viaje</h1>
-        <nav class="navm">
-            <!-- logo--->
-            <a href="#" class="nav-logo">
-            <h2 class="nav-text">✈️FlyGo </h2>
-            </a>
-            <!-- Chek box invisible que controla el menu movil-->
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <!-- menu de navegacion toda la parte de arriba-->
-            <ul class="nav-menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="destinos.html">Destinos</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-        </nav>
-    </header>
-    
+
+<section class="reservas">
+    <h2>Reserva tu Viaje</h2>
+    <p>Planifica tu próxima aventura con nosotros</p>
+
+    <form class="form-reserva">
+
+        <div class="campo">
+            <label>Destino</label>
+            <input type="text" placeholder="Ej: Cancún, París, Cartagena">
+        </div>
+
+        <div class="campo">
+            <label>Fecha de salida</label>
+            <input type="date">
+        </div>
+
+        <div class="campo">
+            <label>Fecha de regreso</label>
+            <input type="date">
+        </div>
+
+        <div class="campo">
+            <label>Número de personas</label>
+            <select>
+                <option>1 Persona</option>
+                <option>2 Personas</option>
+                <option>3 Personas</option>
+                <option>4 Personas</option>
+                <option>5+ Personas</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label>Tipo de viaje</label>
+            <select>
+                <option>Turismo</option>
+                <option>Aventura</option>
+                <option>Negocios</option>
+                <option>Luna de miel</option>
+            </select>
+        </div>
+
+        <button type="submit">Reservar Ahora</button>
+
+    </form>
+</section>
+
 </body>
 </html>
