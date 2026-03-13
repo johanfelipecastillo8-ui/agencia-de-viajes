@@ -10,32 +10,18 @@
 <header>
 <nav class="navbar">
 
-        <!-- LOGO -->
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
         <a href="#" class="nav-logo">
             <h2 class="nav-text">🛩️ FlyGo</h2>
         </a>
-
-        <!-- MENU -->
         <ul class="nav-menu">
-
-            <li class="nav-item">
-                <a href="./index.html" class="nav-link">Home</a>
-            </li>
-
-            <li class="nav-item">
-                <a href="./reservas.html" class="nav-link">Reservas</a>
-            </li>
-
-            <li class="nav-item">
-                <a href="./destinos.html" class="nav-link">Destinos</a>
-            </li>
-
-            <li class="nav-item">
-                <a href="./contactenos.html" class="nav-link">Contáctenos</a>
-            </li>
-
+            <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="./reservas.html" class="nav-link">Reservas</a></li>
+            <li class="nav-item"><a href="./destinos.html" class="nav-link">Destinos</a></li>
+            <li class="nav-item"><a href="./contactenos.html" class="nav-link">Contáctenos</a></li>
         </ul>
-</header>
+    </nav>
 <body>
 
 <section class="reservas">
@@ -84,8 +70,34 @@
 
     </form>
 </section>
-    <footer>
-        <span class="footer-copy">© 2025 FlyGo — Todos los derechos reservados</span>
-    </footer>
 </body>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        reveals.forEach(el => observer.observe(el));
+
+        // Card CTA click
+        document.querySelectorAll('.card-cta').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const title = btn.closest('.destino-card').querySelector('.card-title').textContent;
+                alert(`Próximamente: más información sobre ${title} 🌍`);
+            });
+        });
+    </script>
 </html>

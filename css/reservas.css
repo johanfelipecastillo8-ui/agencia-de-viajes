@@ -8,12 +8,15 @@ background-image:url(../img/6007cbe4b4bed7b1d8ef026f2c0b1f88.jpg) ;
 
 .reservas{
 max-width:900px;
-margin:50px auto;
-background:white;
+background-color: rgba(0, 0, 0, 0.5);
 padding:30px;
 border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-text-align:center;
+box-shadow:0 10px 10px rgba(26, 25, 25, 0.1);
+position: absolute;
+top: 50%;
+left: 35%;
+  
+
 }
 
 .reservas h2{
@@ -78,36 +81,68 @@ header{
     align-items:center;
     padding:15px 0;
     justify-content: center;
+    top: 10%;
+    left: 10%;
 }
 
-/* LOGO */
-
-.nav-text{
-    color:#1a1a1a;
-    font-size:26px;
-    font-weight:600;
+/* ── NAVBAR ── */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 4rem;
+    background: transparent;
+    transition: background 0.4s, backdrop-filter 0.4s;
 }
 
-/* MENU */
-
-.nav-menu{
-    display:flex;
-    list-style:none;
-    gap:35px;
-    
+.navbar.scrolled {
+    background: #89b3b6;
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
 }
 
-.nav-link{
-    text-decoration:none;
-    color:#1a1a1a;
-    font-weight:500;
-    transition:0.3s;
-    
+.nav-logo { text-decoration: none; }
+.nav-logo h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--cream);
 }
 
-.nav-link:hover{
-    color:#4da6ff;
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2.8rem;
 }
+
+.nav-link {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width 0.3s;
+}
+
+.nav-link:hover { color: var(--gold); }
+.nav-link:hover::after { width: 100%; }
+.nav-link.active { color: var(--gold); }
+.nav-link.active::after { width: 100%; }
 
 /* ICONO */
 
@@ -154,14 +189,8 @@ header{
     line-height:1.6;
     color:#666;
 }
-footer {
-    padding: 3rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(245,240,232,0.08);
-}
 
+<<<<<<< HEAD
 .footer-copy {
     font-size: 0.72rem;
     color: rgba(0, 0, 0, 0.3);
@@ -293,3 +322,5 @@ footer {
         padding:0.8rem;
     }
 }
+=======
+>>>>>>> 0a8c9bba508a0a607ae8737082443276bb25f141
