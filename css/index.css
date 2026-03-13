@@ -9,29 +9,77 @@
 /* BODY */
 
 body{
-    background:#f5f9ff;
+    background:#ece7e0;
 }
 
-/* NAVBAR */
-
-header{
-    background:#d9ecff;
-    border-bottom:1px solid #cfe2f5;
+/* ── NAVBAR ── */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 4rem;
+    background: transparent;
+    transition: background 0.4s, backdrop-filter 0.4s;
 }
 
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 60px;
+.navbar.scrolled {
+    background: #89b3b6;
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
 }
+
+.nav-logo { text-decoration: none; }
+.nav-logo h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--cream);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2.8rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width 0.3s;
+}
+
+.nav-link:hover { color: var(--gold); }
+.nav-link:hover::after { width: 100%; }
+.nav-link.active { color: var(--gold); }
+.nav-link.active::after { width: 100%; }
 
 /* LOGO */
 
 .nav-text{
-    color:#1a1a1a;
+    color:#000000;
     font-size:26px;
     font-weight:600;
+}
+.nav-logo {
+    color: #000000;
 }
 
 /* MENU */
@@ -72,7 +120,7 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:60px;
+    padding:90px;
     gap:40px;
 }
 
@@ -115,14 +163,14 @@ header{
 }
 
 .order-now{
-    background:#4da6ff;
+    background:#45484a;
     color:white;
 }
 
 .contact-us{
-    background:white;
-    border:1px solid #4da6ff;
-    color:#4da6ff;
+    background:rgb(81, 74, 74);
+    border:1px solid #000000;
+    color:#ffffff;
 }
 
 /* IMAGEN */
