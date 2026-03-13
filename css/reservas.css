@@ -169,3 +169,127 @@ footer {
     padding: 1.5rem 2rem;
     max-width: 1200px; margin: 0 auto;
 }
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+ 
+/* Tablet landscape ≤ 1024px */
+@media (max-width:1024px){
+    .navbar{ padding:15px 30px; }
+ 
+    .section-content{
+        padding:40px 30px;
+        gap:30px;
+    }
+ 
+    .reservas{ margin:40px 30px; }
+ 
+    .title{ font-size:38px; }
+    .subtitle{ font-size:19px; }
+ 
+    footer{ padding:2rem 2.5rem; }
+}
+ 
+/* Tablet portrait ≤ 768px */
+@media (max-width:768px){
+ 
+    /* Navbar */
+    .navbar{ padding:14px 20px; }
+ 
+    .nav-toggle{ display:flex; }
+    .nav-login{ display:none; }
+ 
+    .nav-menu{
+        position:absolute;
+        top:100%;
+        left:0; right:0;
+        background:#d9ecff;
+        border-top:1px solid #cfe2f5;
+        flex-direction:column;
+        align-items:center;
+        gap:0;
+        max-height:0;
+        overflow:hidden;
+        transition:max-height 0.4s ease, padding 0.3s ease;
+        z-index:99;
+    }
+ 
+    .nav-menu.open{
+        max-height:400px;
+        padding:12px 0;
+    }
+ 
+    .nav-menu li{
+        width:100%;
+        text-align:center;
+    }
+ 
+    .nav-link{
+        display:block;
+        padding:12px 0;
+        font-size:1rem;
+    }
+ 
+    /* Hero */
+    .hero-section{ min-height:auto; }
+ 
+    .section-content{
+        flex-direction:column;
+        padding:40px 20px;
+        text-align:center;
+    }
+ 
+    .hero-details{ max-width:100%; }
+ 
+    .title{ font-size:32px; }
+    .subtitle{ font-size:17px; }
+    .description{ font-size:0.95rem; }
+ 
+    /* Reservas */
+    .reservas{
+        margin:30px 20px;
+        padding:24px 20px;
+    }
+ 
+    .form-reserva{
+        grid-template-columns:1fr;
+    }
+ 
+    /* Footer */
+    footer{
+        padding:2rem 1.5rem;
+        flex-direction:column;
+        text-align:center;
+    }
+}
+ 
+/* Móvil ≤ 480px */
+@media (max-width:480px){
+    .navbar{ padding:12px 16px; }
+    .nav-text{ font-size:20px; }
+ 
+    .title{ font-size:26px; }
+    .subtitle{ font-size:15px; }
+ 
+    .section-content{ padding:30px 16px; }
+ 
+    .reservas{
+        margin:20px 12px;
+        padding:20px 16px;
+        border-radius:8px;
+    }
+ 
+    .reservas h2{ font-size:1.3rem; }
+ 
+    button{
+        font-size:15px;
+        padding:11px;
+    }
+ 
+    footer{ padding:1.5rem 1rem; }
+ 
+    .footer-copy{
+        font-size:0.65rem;
+        padding:0.8rem;
+    }
+}
