@@ -1,7 +1,7 @@
  *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-    --ink: #6fb8a8;
+    --ink: #67aef5c4;
     --cream: #000000;
     --sand: #000000;
     --gold: #c9a84c;
