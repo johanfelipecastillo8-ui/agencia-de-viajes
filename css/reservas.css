@@ -81,6 +81,8 @@ header{
     align-items:center;
     padding:15px 0;
     justify-content: center;
+    top: 10%;
+    left: 10%;
 }
 
 /* ── NAVBAR ── */
@@ -187,19 +189,4 @@ header{
     line-height:1.6;
     color:#666;
 }
-footer {
-    padding: 3rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(245,240,232,0.08);
-}
 
-.footer-copy {
-    font-size: 0.72rem;
-    color: rgba(0, 0, 0, 0.3);
-    letter-spacing: 0.06em;
-    padding: 1.5rem 2rem;
-    max-width: 1200px; 
-    margin: 0 auto;
-}
