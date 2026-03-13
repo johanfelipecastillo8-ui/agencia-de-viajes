@@ -10,7 +10,7 @@ body{
 /* NAVBAR */
 
 header{
-    background-color: #e6f2fb;
+    background-color: #89b3b6;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -111,7 +111,7 @@ section{
 }
 
 .card{
-    background: white;
+    background: #778690;
     padding: 20px;
     border-radius: 10px;
     width: 200px;
@@ -120,7 +120,7 @@ section{
 
 /* Botones */
 button{
-    background-color: #4fc3f7;
+    background-color: #6ec3ea;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -128,7 +128,7 @@ button{
 }
 
 button:hover{
-    background-color: #29b6f6;
+    background-color: #282a2c;
 }
 footer {
     padding: 3rem 4rem;
