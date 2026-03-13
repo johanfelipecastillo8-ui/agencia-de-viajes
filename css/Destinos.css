@@ -1,9 +1,9 @@
  *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-    --ink: #0b0e0e;
-    --cream: #f5f0e8;
-    --sand: #e8ddc8;
+    --ink: #6fb8a8;
+    --cream: #000000;
+    --sand: #000000;
     --gold: #c9a84c;
     --gold-light: #e8c97a;
     --sky: #3a7bd5;
@@ -57,7 +57,7 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: rgba(245, 240, 232, 0.7);
+    color: rgba(0, 0, 0, 0.7);
     font-size: 0.82rem;
     font-weight: 400;
     letter-spacing: 0.12em;
@@ -376,7 +376,7 @@ body {
 
 .strip-text span {
     font-size: 0.72rem;
-    color: rgba(245,240,232,0.4);
+    color: rgba(0, 0, 0, 0.4);
 }
 
 .strip-divider {
@@ -402,7 +402,7 @@ footer {
 
 .footer-copy {
     font-size: 0.72rem;
-    color: rgba(245,240,232,0.3);
+    color: rgba(0, 0, 0, 0.3);
     letter-spacing: 0.06em;
 }
 
