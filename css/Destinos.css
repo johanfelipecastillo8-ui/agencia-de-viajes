@@ -343,7 +343,7 @@ body {
     line-height: 1;
 }
 
-/* ── STRIP BANNER ── */
+/* ── BANNER ── */
 .strip-banner {
     border-top: 1px solid rgba(201,168,76,0.15);
     border-bottom: 1px solid rgba(201,168,76,0.15);
@@ -493,14 +493,14 @@ footer {
  
     .card-image-wrap { height: 320px; }
  
-    /* On touch devices always show desc & cta */
+   
     .card-desc,
     .card-cta {
         opacity: 1;
         transform: translateY(0);
     }
  
-    /* Strip */
+   
     .strip-banner {
         padding: 1.5rem;
         flex-direction: column;
