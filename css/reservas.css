@@ -4,19 +4,18 @@ body{
 font-family: Arial, sans-serif;
 margin:0;
 background-image:url(../img/6007cbe4b4bed7b1d8ef026f2c0b1f88.jpg) ;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
 }
 
 .reservas{
 max-width:900px;
-background-color: rgba(0, 0, 0, 0.5);
+background-color: rgba(0, 0, 0, 0.7);
 padding:30px;
 border-radius:10px;
 box-shadow:0 10px 10px rgba(26, 25, 25, 0.1);
-position: absolute;
-top: 50%;
-left: 35%;
-  
-
+margin: 2rem auto;
 }
 
 .reservas h2{
@@ -68,21 +67,12 @@ button:hover{
 background:#1565c0;
 }
 
-/* NAVBAR */
-
-header{
-    background:#d9ecff;
-    border-bottom:1px solid #cfe2f5;
-}
-
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 0;
+main {
+    padding-top: 120px;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
     justify-content: center;
-    top: 10%;
-    left: 10%;
 }
 
 /* ── NAVBAR ── */
@@ -197,6 +187,113 @@ header{
     letter-spacing: 0.06em;
     padding: 1.5rem 2rem;
     max-width: 1200px; margin: 0 auto;
+}
+
+.hamburguer {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburguer span {
+    width: 25px;
+    height: 3px;
+    background: #000000;
+    transition: 0.3s;
+}
+
+#menu-toggle { display: none; }
+
+#menu-toggle:checked ~ .hamburguer span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+#menu-toggle:checked ~ .hamburguer span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked ~ .hamburguer span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+main {
+    padding-top: 50px;
+}
+
+/* ══════════════════════════════════════
+   MEDIA QUERIES — RESPONSIVE
+══════════════════════════════════════ */
+
+/* ── Tablet landscape ≤ 1024px ── */
+@media (max-width: 1024px) {
+    .navbar { padding: 1.2rem 2.5rem; }
+    .reservas { left: 20%; max-width: 80%; }
+}
+
+/* ── Tablet portrait ≤ 768px ── */
+@media (max-width: 768px) {
+    .navbar { padding: 1rem 1.5rem; }
+
+    main { padding-top: 80px; display: block; min-height: auto; }
+
+    .hamburguer { display: flex; }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(217, 236, 255, 0.95);
+        backdrop-filter: blur(18px);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
+    }
+
+    #menu-toggle:checked ~ .nav-menu {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+    }
+
+    .nav-item:last-child { border-bottom: none; }
+
+    .nav-link {
+        display: block;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .reservas {
+        position: static;
+        max-width: 100%;
+        margin: 2rem;
+        left: auto;
+    }
+
+    .form-reserva {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Móvil ≤ 480px ── */
+@media (max-width: 480px) {
+    .navbar { padding: 0.8rem 1rem; }
+    .nav-text { font-size: 1.5rem; }
+    .reservas { margin: 1rem; padding: 20px; }
+
+    main { padding-top: 70px; display: block; min-height: auto; }
 }
 /* ══════════════════════════════
    RESPONSIVE

@@ -448,6 +448,97 @@ footer {
     .nav-toggle { display: flex; }
  
     .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(36, 36, 36, 0.95);
+        backdrop-filter: blur(18px);
+        border-top: 1px solid rgba(201, 168, 76, 0.3);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
+    }
+ 
+    #menu-toggle:checked ~ .nav-menu {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+ 
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+    }
+ 
+    .nav-item:last-child { border-bottom: none; }
+ 
+    .nav-link {
+        display: block;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+ 
+    .hamburguer {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 4px;
+    }
+ 
+    .hamburguer span {
+        width: 25px;
+        height: 3px;
+        background: var(--cream);
+        transition: 0.3s;
+    }
+ 
+    #menu-toggle { display: none; }
+ 
+    #menu-toggle:checked ~ .hamburguer span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+ 
+    #menu-toggle:checked ~ .hamburguer span:nth-child(2) {
+        opacity: 0;
+    }
+ 
+    #menu-toggle:checked ~ .hamburguer span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+ 
+    .hero { padding: 0 1.5rem 3rem; min-height: 400px; }
+    .hero-title { font-size: clamp(2.5rem, 8vw, 4rem); }
+ 
+    main { padding-top: 80px; }
+ 
+    .destinos-section { padding: 3rem 1.5rem 5rem; }
+ 
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+ 
+    .strip-banner {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+ 
+    .strip-item { justify-content: center; }
+ 
+    footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+    .nav-menu {
         position: fixed;
         top: 0; right: -100%;
         width: 72%;
@@ -488,6 +579,7 @@ footer {
     .cards-grid {
         grid-template-columns: 1fr;
         gap: 1.2rem;
+        border-radius: 15px;
     }
  
     .card-image-wrap { height: 320px; }
@@ -515,31 +607,91 @@ footer {
  
     .footer-copy { padding: 1rem; }
 }
+  /* Botón hamburguesa visible */
+  .hamburguer {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  .hamburguer span {
+    height: 3px;
+    width: 25px;
+    background-color: #e2750f;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
  
 /* ── Mobile ≤ 480px ── */
 @media (max-width: 480px) {
-    .nav-logo h2  { font-size: 1.4rem; }
+
+    /* NAVBAR */
+    .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;          /* IMPORTANTE */
+    width: 100vw;      /* Ocupa todo el ancho de la pantalla */
+    z-index: 1000;
+    background: #5f7f82; /* Usa tu color real */
     
+    padding: 0.8rem 1rem;
+
+    margin: 0;         /* Evita centrado */
+}
+    .nav-logo h2 { 
+        font-size: 1.4rem; 
+    }
+
+    /* Para que el contenido no quede debajo del navbar */
+    main {
+        padding-top: 70px; /* Ajusta según la altura real del nav */
+    }
+
+    /* HERO */
     .hero {
         min-height: 320px;
         padding: 0 1.2rem 2.5rem;
     }
- 
+
     .hero-eyebrow { font-size: 0.65rem; }
     .hero-sub     { font-size: 0.82rem; }
- 
-    .destinos-section { padding: 2.5rem 1.2rem 4rem; }
- 
+
+    /* DESTINOS */
+    .destinos-section { 
+        padding: 2.5rem 1.2rem 4rem; 
+    }
+
     .card-image-wrap { height: 260px; }
-    .card-body        { padding: 1.2rem; }
-    .card-title       { font-size: 1.6rem; }
- 
+    .card-body       { padding: 1.2rem; }
+    .card-title      { font-size: 1.6rem; }
+
+    /* BANNER */
     .strip-banner { padding: 1.2rem; }
- 
+
+    /* FOOTER */
     footer { padding: 1.5rem 1.2rem; }
- 
+
     .footer-copy {
         font-size: 0.65rem;
         padding: 0.8rem;
     }
 }
+  /* Botón hamburguesa visible */
+  .hamburguer {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  .hamburguer span {
+    height: 3px;
+    width: 25px;
+    background-color: #e2750f;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }

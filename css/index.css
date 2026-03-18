@@ -71,6 +71,38 @@ body{
 .nav-link.active { color: var(--gold); }
 .nav-link.active::after { width: 100%; }
 
+.hamburguer {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburguer span {
+    width: 25px;
+    height: 3px;
+    background: #000000;
+    transition: 0.3s;
+}
+
+#menu-toggle { display: none; }
+
+#menu-toggle:checked ~ .hamburguer span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+#menu-toggle:checked ~ .hamburguer span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked ~ .hamburguer span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+main {
+    padding-top: 120px;
+}
+
 /* LOGO */
 
 .nav-text{
@@ -224,9 +256,9 @@ footer {
     /* Navbar */
     .navbar{ padding:14px 20px; }
  
-    .nav-toggle{ display:flex; }
+    main { padding-top: 80px; }
  
-    .nav-login{ font-size:28px; }
+    .hamburguer { display: flex; }
  
     .nav-menu{
         position:absolute;
@@ -243,7 +275,7 @@ footer {
         z-index:99;
     }
  
-    .nav-menu.open{
+    #menu-toggle:checked ~ .nav-menu {
         max-height:400px;
         padding:12px 0;
     }
@@ -293,6 +325,8 @@ footer {
 /* Móvil ≤ 480px */
 @media (max-width:480px){
     .navbar{ padding:12px 16px; }
+ 
+    main { padding-top: 70px; }
  
     .nav-text{ font-size:20px; }
  
